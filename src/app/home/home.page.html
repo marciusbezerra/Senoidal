@@ -1,14 +1,50 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Senoidal
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <div class="ion-padding div-sen">
+    <svg style="display: block; top: 100px; left: 60px; width: 360px; height: 60px; border: 1px solid white">
+      <polyline class="cismograph" [attr.points]="history"  />
+    </svg>
   </div>
+
+  <ion-list>
+    <ion-item>
+        <ion-label position="stacked">sampleRate</ion-label>
+        <ion-input type="number" [(ngModel)]="sampleRate"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">signalLevel</ion-label>
+        <ion-input type="number" [(ngModel)]="signalLevel" step="0.1"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">amplitudeMax</ion-label>
+        <ion-input type="number" [(ngModel)]="amplitudeMax"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">frequency</ion-label>
+        <ion-input type="number" [(ngModel)]="frequency"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <ion-item>
+          <ion-label position="stacked">new signalLevel</ion-label>
+          <ion-input type="number" [(ngModel)]="newSignalLevel" step="0.1"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-button size="large" shape="round" fill="outline" (click)="startSenoidal()">Iniciar</ion-button>
+          <ion-button size="large" shape="round" fill="outline" (click)="stopSenoidal()">Parar</ion-button>
+          <ion-button size="large" shape="round" fill="outline" (click)="incSignal()">+</ion-button>
+          <ion-button size="large" shape="round" fill="outline" (click)="decSignal()">-</ion-button>
+      </ion-item>
+      <ion-item>
+      </ion-item>      
+    </ion-list>  
+  
 </ion-content>

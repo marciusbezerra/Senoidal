@@ -1,5 +1,7 @@
 {
   "name": "Senoidal",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
